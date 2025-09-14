@@ -1,0 +1,40 @@
+Aug 11 12:18:32 linuxbox nm-dispatcher[16130]: Success
+Aug 11 12:18:37 linuxbox wpa_supplicant[657]: wlp0s20f3: CTRL-EVENT-SIGNAL-CHANGE above=1 signal=-51 noise=9999 txrate=390000
+Aug 11 12:18:37 linuxbox wpa_supplicant[657]: wlp0s20f3: CTRL-EVENT-SIGNAL-CHANGE above=0 signal=-51 noise=9999 txrate=390000
+Aug 11 12:18:39 linuxbox htpdate: www.wikipedia.org no timestamp
+Aug 11 12:18:40 linuxbox wpa_supplicant[657]: wlp0s20f3: CTRL-EVENT-SIGNAL-CHANGE above=1 signal=-52 noise=9999 txrate=390000
+Aug 11 12:18:40 linuxbox wpa_supplicant[657]: wlp0s20f3: CTRL-EVENT-SIGNAL-CHANGE above=0 signal=-52 noise=9999 txrate=390000
+Aug 11 12:18:40 linuxbox htpdate: www.wikipedia.org no timestamp
+Aug 11 12:18:42 linuxbox systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+Aug 11 12:18:46 linuxbox htpdate: www.wikipedia.org no timestamp
+Aug 11 12:18:47 linuxbox htpdate: www.wikipedia.org no timestamp
+Aug 11 12:18:47 linuxbox htpdate: Adjusting 0.500 seconds
+Aug 11 12:18:53 linuxbox kernel: [ 6588.560803] ICMPv6: NA: a4:6b:b6:c7:ee:62 advertised our address fe80::478:e65d:de2:de55 on wlp0s20f3!
+Aug 11 12:19:01 linuxbox wpa_supplicant[657]: wlp0s20f3: CTRL-EVENT-SIGNAL-CHANGE above=1 signal=-51 noise=9999 txrate=390000
+Aug 11 12:19:01 linuxbox wpa_supplicant[657]: wlp0s20f3: CTRL-EVENT-SIGNAL-CHANGE above=0 signal=-51 noise=9999 txrate=390000
+Aug 11 12:19:09 linuxbox kernel: [ 6604.022815] ICMPv6: NA: a4:6b:b6:c7:ee:62 advertised our address fe80::478:e65d:de2:de55 on wlp0s20f3!
+Aug 11 12:19:09 linuxbox kernel: [ 6604.022842] ICMPv6: NA: a4:6b:b6:c7:ee:62 advertised our address fe80::478:e65d:de2:de55 on wlp0s20f3!
+Aug 11 12:19:09 linuxbox kernel: [ 6604.023233] ICMPv6: NA: a4:6b:b6:c7:ee:62 advertised our address fe80::478:e65d:de2:de55 on wlp0s20f3!
+Aug 11 12:19:09 linuxbox kernel: [ 6604.023290] ICMPv6: NA: a4:6b:b6:c7:ee:62 advertised our address fe80::478:e65d:de2:de55 on wlp0s20f3!
+Aug 11 12:19:15 linuxbox rtkit-daemon[953]: Supervising 8 threads of 5 processes of 1 users.
+Aug 11 12:20:38 linuxbox kernel: [ 6693.007612] ICMPv6: NA: a4:6b:b6:c7:ee:62 advertised our address fe80::478:e65d:de2:de55 on wlp0s20f3!
+Aug 11 12:20:38 linuxbox kernel: [ 6693.009687] ICMPv6: NA: a4:6b:b6:c7:ee:62 advertised our address fe80::478:e65d:de2:de55 on wlp0s20f3!
+Aug 11 12:21:28 linuxbox rtkit-daemon[953]: message repeated 13 times: [ Supervising 8 threads of 5 processes of 1 users.]
+Aug 11 12:21:28 linuxbox rtkit-daemon[953]: Successfully made thread 16771 of process 16528 owned by '1000' RT at priority 10.
+Aug 11 12:21:28 linuxbox rtkit-daemon[953]: Supervising 9 threads of 6 processes of 1 users.
+Aug 11 12:22:28 linuxbox rtkit-daemon[953]: Supervising 8 threads of 5 processes of 1 users.
+Aug 11 12:45:27 linuxbox rtkit-daemon[953]: message repeated 11 times: [ Supervising 8 threads of 5 processes of 1 users.]
+Aug 11 12:51:00 linuxbox systemd[1]: tmp-.mount_obsidihCD6ry.mount: Deactivated successfully.
+Aug 11 12:52:32 linuxbox systemd-timesyncd[617]: Initial synchronization to time server 61.0.251.129:123 (time.iitpkd.ac.in).
+Aug 11 12:53:13 linuxbox rtkit-daemon[953]: Supervising 8 threads of 5 processes of 1 users.
+Aug 11 12:53:14 linuxbox rtkit-daemon[953]: message repeated 3 times: [ Supervising 8 threads of 5 processes of 1 users.]
+Aug 11 12:53:14 linuxbox rtkit-daemon[953]: Successfully made thread 19759 of process 18956 owned by '1000' RT at priority 10.
+Aug 11 12:53:14 linuxbox rtkit-daemon[953]: Supervising 9 threads of 6 processes of 1 users.
+Aug 11 12:54:09 linuxbox rtkit-daemon[953]: message repeated 14 times: [ Supervising 9 threads of 6 processes of 1 users.]
+Aug 11 12:57:43 linuxbox rtkit-daemon[953]: Supervising 8 threads of 5 processes of 1 users.
+Aug 11 12:58:36 linuxbox rtkit-daemon[953]: message repeated 15 times: [ Supervising 8 threads of 5 processes of 1 users.]
+Aug 11 12:58:53 linuxbox htpdate: www.wikipedia.org no timestamp
+Aug 11 12:58:54 linuxbox htpdate: www.wikipedia.org no timestamp
+Aug 11 12:58:54 linuxbox htpdate: Adjusting -0.500 seconds
+Aug 11 12:58:54 linuxbox htpdate: Drift -207.73 PPM, -17.95 s/day
+Aug 11 12:59:33 linuxbox rtkit-daemon[953]: Supervising 8 threads of 5 processes of 1 users.
