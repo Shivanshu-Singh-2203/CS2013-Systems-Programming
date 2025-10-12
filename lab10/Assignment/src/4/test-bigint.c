@@ -5,7 +5,7 @@
 
 // TODO: Add appropriate header files
 
-
+#include "bigint.h"
 int testEqual(){
 	Bigint * a = malloc(sizeof(Bigint));
         initialize(a);
@@ -17,17 +17,45 @@ int testEqual(){
 
 	int res = !(equal(a,b) == 0);
 
-	free_bigint(a);
-	free_bigint(b);
+
 
 	return res;
 }
 
+int testAdd() {
+    // Test 1: Same length, no carry
+    Bigint *a = malloc(sizeof(Bigint));
+    a->numbers = malloc(sizeof(List));
+    a->numbers->curr_count = 0;
+    append(a->numbers, 123456789);
+    append(a->numbers, 987654321);
 
-int testAdd(){
+    Bigint *b = malloc(sizeof(Bigint));
+    b->numbers = malloc(sizeof(List));
+    b->numbers->curr_count = 0;
+    append(b->numbers, 111111111);
+    append(b->numbers, 111111111);
 
-	// TODO: Complete the function
+    Bigint *sum = add(a,b);
+
+    // Expected sum: block 0 = 234,567,900, block1 = 1,098,765,432?  
+    // Actually sum by blocks:
+    // block 0: 123456789 + 111111111 = 234,567,900 (no carry)
+    // block 1: 987654321 + 111111111 = 1,098,765,432 → store 98,765,432, carry 1
+    // append carry → 1 → block2
+    int pass = 0;
+    if(sum->numbers->curr_count == 3 &&
+       sum->numbers->array[0] == 234567900 &&
+       sum->numbers->array[1] == 98765432 &&
+       sum->numbers->array[2] == 1)
+    {
+        pass = 1;
+    }
+
+
+    return pass;
 }
+
 
 int testRead(){
 	Bigint * a = malloc(sizeof(Bigint));

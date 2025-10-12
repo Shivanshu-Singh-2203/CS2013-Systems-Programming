@@ -2,13 +2,17 @@
  * Header file for Big Integer implementation
  *
  */
+
 #ifndef BIG_INT
 #define BIG_INT
+
 // TODO:Add macros to prevent duplicate inclusion
 #include <stdio.h>
 #include <stdlib.h>
 // TODO: Add appropriate header files needed
 #include "list.h"
+#include "stddef.h"
+
 struct bigint {
 	List *numbers;
 	int sign;

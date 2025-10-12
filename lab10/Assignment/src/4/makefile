@@ -17,6 +17,22 @@ all: build
 
 # TODO: Edit only in the following parts
 # You need to write rules as mentioned in the question
+bigint.o : bigint.c
+	gcc -Wall -c bigint.c -o bigint.o
+
+list.o : list.c
+	gcc -Wall -c list.c -o list.o
+
+test-bigint.o : test-bigint.c
+	gcc -Wall -c test-bigint.c -o test-bigint.o
+
+test-list.o : test-list.c
+	gcc -Wall -c test-list.c -o test-list.o
+
+testlist : test-list.o list.o
+	gcc test-list.o list.o -o t
+build : bigint.o list.o test-bigint.o
+	gcc list.o test-bigint.o bigint.o -o 4
 
 #####################
 # Do not edit below #
