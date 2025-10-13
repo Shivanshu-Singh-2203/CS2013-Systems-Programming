@@ -39,6 +39,8 @@ void initialize(Bigint* bi_ptr){
 	Bigint* newBigInt = malloc(sizeof(Bigint));
 	newBigInt->numbers = malloc(sizeof(List));
         newBigInt->numbers->array = NULL;
+		newBigInt->numbers->curr_count = 0;
+		newBigInt->numbers->max_count = 0;
 	newBigInt->sign = 1;
 	bi_ptr = newBigInt;
 }

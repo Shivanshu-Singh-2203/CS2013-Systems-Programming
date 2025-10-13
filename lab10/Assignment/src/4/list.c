@@ -2,7 +2,7 @@
 
 int grow(List* l){
 	size_t newSize;
-	if(l->max_count == 0){
+	if(l->max_count == 0 || l->array == NULL){
 		newSize = sizeof(int);
 		l->array = malloc(newSize);
 		l->max_count ++;

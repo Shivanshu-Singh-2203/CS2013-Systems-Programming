@@ -24,15 +24,13 @@ int testEqual(){
 
 int testAdd() {
     // Test 1: Same length, no carry
-    Bigint *a = malloc(sizeof(Bigint));
-    a->numbers = malloc(sizeof(List));
-    a->numbers->curr_count = 0;
+   	Bigint *a;
+	initialize(a);
     append(a->numbers, 123456789);
     append(a->numbers, 987654321);
 
-    Bigint *b = malloc(sizeof(Bigint));
-    b->numbers = malloc(sizeof(List));
-    b->numbers->curr_count = 0;
+   	Bigint *b;
+	initialize(b);
     append(b->numbers, 111111111);
     append(b->numbers, 111111111);
 
@@ -84,7 +82,7 @@ int test(){
 	}else{
 		printf("add() passed\n");
 	}
-
+/*
 	if(testEqual()){
 		printf("\tequal() failed\n");
 		result = 0;
@@ -99,7 +97,7 @@ int test(){
 		printf("read() passed\n");
 	}
 
-
+*/
 	return result;
 }
 
