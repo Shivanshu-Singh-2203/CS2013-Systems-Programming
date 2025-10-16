@@ -7,7 +7,6 @@
 #include <stdlib.h>
 #include "list.h"
 
-
 int testAppend(){
 	List* l = malloc(sizeof(List));
 	l->array = NULL;

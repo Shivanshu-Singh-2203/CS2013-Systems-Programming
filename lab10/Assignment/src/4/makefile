@@ -31,9 +31,15 @@ test-list.o : test-list.c
 
 testlist : test-list.o list.o
 	gcc test-list.o list.o -o t
-build : bigint.o list.o test-bigint.o
-	gcc list.o test-bigint.o bigint.o -o 4
 
+4.o : 4.c
+	gcc -Werror -g -c 4.c -o 4.o
+
+build : 4.o bigint.o list.o test-bigint.o
+	gcc list.o bigint.o 4.o -o 4
+
+mytest:
+	gcc list.o bigint.o -o mytest
 #####################
 # Do not edit below #
 #####################

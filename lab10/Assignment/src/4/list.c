@@ -2,6 +2,13 @@
 
 int grow(List* l){
 	size_t newSize;
+
+	if(l == NULL){
+		List* newList = realloc(l, sizeof(List));
+		if(newList == NULL){
+
+		}
+	}
 	if(l->max_count == 0 || l->array == NULL){
 		newSize = sizeof(int);
 		l->array = malloc(newSize);
@@ -9,7 +16,7 @@ int grow(List* l){
 		return 0;
 	}
 	else if(l->curr_count == l->max_count){
-		int newSize = 2* l->max_count * sizeof(int);
+		newSize = 2* l->max_count * sizeof(int);
 		int* newArray = realloc(l->array, newSize);
 		if(newArray == NULL){
 			return 1;
