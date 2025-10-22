@@ -1,73 +1,48 @@
 #include <stdio.h>
-#include <math.h>
-// TODO: Define the struct named complex appropriately
 
-struct complex {
+struct complex
+{
 	double real;
 	double imag;
 };
 
-
-
-// Avoids the need to type `struct complex` each time
 typedef struct complex mycomplex;
 
-
-mycomplex add(const mycomplex c1, const mycomplex c2){
-	mycomplex c;
-	c.real = c1.real + c2.real;
-	c.imag = c1.imag + c2.imag;
-	return c;
+mycomplex add(mycomplex first, mycomplex second){
+	mycomplex sum;
+	sum.imag = first.imag + second.imag;
+	sum.real = first.real + second.real;
+	return sum;
 }
 
-mycomplex subtract(const mycomplex c1, const mycomplex c2){
-	mycomplex c;
-	c.real = c1.real - c2.real;
-	c.imag = c1.imag - c2.imag;
-	return c;
-	// TODO: Complete the code
+void print_complex(mycomplex nums){
+	printf("%.4lf+%.4lfj\n", nums.real, nums.imag);
 }
 
-mycomplex multiply(const mycomplex c1, const mycomplex c2){
-	mycomplex c;
-	c.real = c1.real*c2.real -c2.imag*c1.imag;
-	c.imag = c1.imag *c2.real + c2.imag*c1.real ;
-	return c;
-	// TODO: Complete+ the code
+mycomplex subtract(mycomplex first, mycomplex second){
+	mycomplex temp;
+	temp.imag = first.imag - second.imag;
+	temp.real = first.real - second.real;
+	return temp;
 }
 
-double modulus(mycomplex c)
-{
-	double a = c.real*c.real;
-	double b = c.imag*c.imag;
-
-	double x= a + b;
-	return x;
-
-
-
+mycomplex multiply(mycomplex first, mycomplex second){
+	mycomplex temp;
+	temp.imag = first.real*second.imag + first.imag*second.real;
+	temp.real = first.real * second.real - first.imag*second.imag;
+	return temp;
 }
 
-
-mycomplex divide(const mycomplex c1, const mycomplex c2){
-	// TODO: Complete the code
-	mycomplex c, tep;
-	tep.real = c2.real;
-	tep.imag = -c2.imag;
-	mycomplex prof = multiply(c1, tep);
-	double mod = modulus(c2);
-	c.real = prof.real/mod;
-	c.imag = prof.imag/mod;
-	return c;
-	
-}
-
-void print_complex(const mycomplex c){
-	// TODO: Complete the code
-	
-
-		printf("%.4lf+%.4lfj\n", c.real, c.imag);
-
+mycomplex divide(mycomplex first, mycomplex second){
+	mycomplex temp;
+	double abs = second.real*second.real + second.imag*second.imag;
+	mycomplex ct;
+	ct.real = second.real;
+	ct.imag = -second.imag;
+	temp = multiply(ct, first);
+	temp.real /= abs;
+	temp.imag /= abs;
+	return temp;
 }
 
 int main()
