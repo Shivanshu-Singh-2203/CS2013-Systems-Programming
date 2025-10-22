@@ -11,14 +11,22 @@ OPTS := -Wall -Werror
 # targets
 all: build
 
+read : readppm.c
+	gcc -g  readppm.c -o readppm
 
+bwprint : bwprint.c
+	gcc -g bwprint.c -o bwprint
+
+betterbwprint: betterbwprint.c
+	gcc -g betterbwprint.c -o betterbwprint
+build : read bwprint betterbwprint
 
 run: build
 	@echo "Running the program\n"
 	@$(PROJ_HOME)/$(NAME)
 
 clean:
-	rm -f $(NAME) run.log leaks.log *.o
+	rm -f $(NAME) readppm run.log leaks.log *.o *.ppm
 
 tests: clean build
 	@echo 'Running local test-suite'

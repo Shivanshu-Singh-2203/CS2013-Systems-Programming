@@ -1,24 +1,8 @@
 #include "bigint.h"
 #define POWNINE 1000000000
-void initialize(Bigint* newptr){
-	newPtr = malloc(sizeof(Bigint));
-	if(newPtr == NULL){
-		return ;
-	}
-
+void initialize(Bigint* newPtr){
 	newPtr->numbers = malloc(sizeof(List));
-	if(newPtr->numbers ==  NULL){
-		return ;
-	}
-
-	newPtr->numbers->array = malloc(sizeof(int));
-	if(newPtr->numbers->array ==  NULL){
-		return ;
-	}
-	newPtr->sign = 1;
-	newPtr->numbers->max_count = 0;
-	newPtr->numbers->curr_count = 0;
-	return ;
+	newPtr->sign = 0;
 }
 
 void free_bigint(Bigint* bi_ptr){
@@ -121,7 +105,7 @@ int read(Bigint* num){
 	while(pass){
 
 		scanf("%d",&number);
-		append(num->numbers, number);
+		insert(num->numbers, 0, number);
 		scanf("%c", &op);
 		if(op == '\n'){
 			pass = 0;	
