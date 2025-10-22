@@ -1,39 +1,17 @@
 #include <stdio.h>
 
-
-/**
- * SumDigits is a recursive function takes in a positive number and computes
- * the sum of all its digits till it becomes a single digit number.
- *
- * @arg num An integer
- */ 
-int sum;
-
-
-int SumDigits(const int num){
-
-	if(num  < 10)
-	{
-		return num;
+unsigned int sum(unsigned int nums){
+	if(nums / 10 == 0 ){
+		return nums;
 	}
-	else {
-		const int rem= num%10 + num/10;
-		
-	return SumDigits(rem);
-	}
+		unsigned int temp = nums%10;
+		unsigned int temp2 = nums/10;
+		return sum(temp + temp2);
 }
 
-int main()
-{
-	int input, result;
-
-	scanf("%d", &input);
-	//Do not add/modify anything about this line
-	//TODO: Complete the code
-	
-	result = SumDigits(input);
-	//Do not add/modify anything below this line
-	printf("%d\n", result);
+int main(void){
+	unsigned int nums ;
+	scanf("%u", &nums);
+	printf("%u", sum(nums));
 	return 0;
 }
-

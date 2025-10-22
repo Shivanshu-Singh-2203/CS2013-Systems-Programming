@@ -1,32 +1,16 @@
 #include <stdio.h>
 
-// TODO: Complete the code for the function along with its arguments
-// void swap( //TODO add arguments properly  )
-
-//
-
-
-void swap(int* x, int* y)
-{
-	int temp = *x;
+void swap(int* x, int* y){
+	int temp;
+	temp =*x;
 	*x = *y;
 	*y = temp;
 }
 
-
-int main()
-{
-	int x,y;
-
-	//Read two numbers from the user
+int main(void){
+	int x, y;
 	scanf("%d %d", &x, &y);
-
-	//Do not add/modify anything about this line
-	//TODO: Complete the code
-	
-	swap(&x,&y);	
-	//Do not add/modify anything below this line
-	printf("%d %d\n", x,y);
+	swap(&x, &y);
+	printf("%d %d", x ,y);
 	return 0;
 }
-

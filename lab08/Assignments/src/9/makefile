@@ -12,7 +12,7 @@ OPTS := -Wall
 all: build
 
 build: $(SOURCES_LIST)
-	gcc -o $(NAME) $(SOURCES_LIST) $(OPTS)
+	gcc -g -o $(NAME) $(SOURCES_LIST) $(OPTS)
 	
 run: build
 	@echo "Running the program\n"

@@ -9,9 +9,7 @@ int main()
 
 	scanf("%ld", &size);
 
-	//Do not add/modify anything about this line
-	//TODO: Complete the code
-	
+
 	str = malloc(sizeof(char)*(size + 1));
 	scanf("%s", str);
 	char* temp = str;
@@ -27,10 +25,7 @@ int main()
 		temp --;
 	}
 	printf("%c",*temp);
-        //TODO: DO NOT FORGET TO FREE ANY MEMORY ALLOCATED USING malloc() using
-        // free() 
 	free(str);
-	//Do not add/modify anything below this line
 	return 0;
 }
 
