@@ -1,40 +1,20 @@
 #include <stdio.h>
-//TODO: Include appropriate header file for dynamic memory allocation
 #include <stdlib.h>
-int main()
-{
-	long n;
 
-	//Get the number of integers from the user
-	scanf("%ld", &n);
-
-	//Do not add/modify anything about this line
-	//TODO: Complete the code
-
-	int * arr = malloc(sizeof(int)*n);
-	int *temp = arr;
-	int * array = arr;
-	for(int j = 0; j < n; j ++)
-	{
-		scanf("%d\n", array); 
-		array ++;
+int main(void){
+	unsigned int size;
+	scanf("%u", &size);
+	int* array = malloc(sizeof(int)* size);
+	for(int i = 0; i < size; i ++){
+		scanf("%d", &array[i]);
 	}
 
-		
-	while(temp < array)
-	{
-		printf("%d", *temp);
-		temp ++;
+	for(int i = 0; i < size; i ++ ){
+		printf("%d", array[i]);
 	}
+	printf("\n");
 
-
-
-	//TODO: DO NOT FORGET TO FREE ANY MEMORY ALLOCATED USING malloc() using
-	// free() 
-	
-	free(arr);
-	
-	//Do not add/modify anything below this line
+	free(array);
 	return 0;
 }
 
