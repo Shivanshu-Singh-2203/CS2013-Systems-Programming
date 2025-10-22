@@ -1,24 +1,20 @@
 #include <stdio.h>
 #include <limits.h>
-void factoral(unsigned int input, long fact)
-{
-	if(input == 0)	
-	{
-		printf("%ld", fact);
-		return;
+
+void factorial(unsigned int input, long fact){
+	if(input == 0){
+		printf("%ld\n", fact);
+		return ;
 	}
 	else {
-		long nq = input*fact;
-		if (nq < 0)
-		{
-		printf("TOO LARGE TO COMPUTE");
-		
-		return;
+		long n= fact*input;
+		if(n < 0 ){
+			printf("TOO LARGE TO COMPUTE\n");
+			return;
 		}
-		return factoral(input - 1, nq);}}
-
-
-
+		return factorial(input - 1, n); 
+	}
+}
 
 int main()
 {
@@ -28,8 +24,7 @@ int main()
 	scanf("%d", &input);
 	// Do not modify anything above this line
 	// TODO: Complete the code
-	factoral(input, fact);
+	factorial(input, fact);
 	//Do not add/modify anything below this line
 	return 0;
 }
-
