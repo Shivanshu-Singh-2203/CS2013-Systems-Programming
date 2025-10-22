@@ -1,55 +1,20 @@
-#include <stdio.h>
-//TODO: Include appropriate header file for dynamic memory allocation
 #include <stdlib.h>
+#include <stdio.h>
 #include <limits.h>
 
-int Max(int a, int b)
-{
-	if(a > b )
-	{
-		return a;
-	}
-	else 
-	{
-		return b;}
-
-}
-
-
-int main()
-{
-	long n;
-	int max;
-
-	//Get the number of integers from the user
-	scanf("%ld", &n);
-
-	//Do not add/modify anything about this line
-	//TODO: Complete the code
-	int * arr = malloc(sizeof(int)*n);
-	int *temp = arr;
-	int * array = arr;
-	for(int j = 0; j < n; j ++)
-	{
-		scanf("%d\n", temp); 
-		temp ++;
-	}
-
-
-	max = INT_MIN;
-	for(int j = 0; j < n ; j ++ )
-	{
-		max = Max(max, *array);
-		array ++;
-	}
-
+int main(void){
+	unsigned int size;
+	scanf("%u", &size);
 	
-        //TODO: DO NOT FORGET TO FREE ANY MEMORY ALLOCATED USING malloc() using
-        // free()
-	free(arr);
-	
-	//Do not add/modify anything below this line
-	printf("%d\n", max);
+	int * array = malloc(sizeof(int)*size);
+	for(int i = 0; i < size; i ++){
+		scanf("%d", &array[i]);
+	}
+
+	int max = INT_MIN;
+	for(int i = 0; i < size; i ++ ){
+		max = max > array[i] ? max : array[i];
+	}
+	printf("%d", max);
 	return 0;
 }
-
