@@ -20,6 +20,12 @@ all: build
 stack.o: stack.c
 	gcc -Wall -g -c stack.c -o stack.o
 
+test-stack.o : test-stack.c 
+	gcc -Werror -c -g test-stack.c -o test-stack.o
+
+test : stack.o test-stack.o  
+	gcc stack.o test-stack.o -o test
+
 2.o: 2.c
 	gcc -Wall -c -g 2.c -o 2.o
 
@@ -34,7 +40,7 @@ run: build
 	@$(PROJ_HOME)/$(NAME)
 
 clean:
-	rm -f $(NAME) run.log leaks.log *.o test-stack
+	rm -f $(NAME) run.log leaks.log *.o test
 	rm -f build
 tests: clean build
 	@echo 'Running local test-suite'

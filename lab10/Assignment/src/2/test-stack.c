@@ -4,7 +4,6 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h>
 #include "stack.h"
 
 // Test cases for push is written below
@@ -21,13 +20,45 @@ int testPush(){
 }
 
 // TODO: Write test cases for pop
-int testPop(){
-}
+int testPop() {
+    int val;
 
+    int el1 = push(3);
+    int el2 = push(4);
+    int ret1 = pop(&val);
+    int check1 = !(val == 4); // last pushed (LIFO)
+
+    int ret2 = pop(&val);
+    int check2 = !(val == 3);
+
+    int ret3 = pop(&val);
+    int check3 = !(val == 2);
+
+    int ret4 = pop(&val);
+    int check4 = !(val == 1);
+
+    // stack now empty
+    int ret5 = pop(&val); // should fail
+    int check5 = !(ret5 == 1);
+
+    return (ret1 || el1 | el2 || check1 || ret2 || check2 || ret3 || check3 || ret4 || check4 || check5);
+}
 // TODO: Write test cases for stack_head
-int testHead(){
-}
+int testHead() {
+    int head;
 
+    // After popping everything, push one new element
+    push(42);
+
+    int ret1 = stack_head(&head);
+    int check1 = !(head == 42);
+
+    int ret2 = pop(&head);
+    int ret3 = stack_head(&head); // stack now empty → should fail
+    int check3 = !(ret3 == 1);
+
+    return (ret1 || check1 || ret2 || check3);
+}
 
 int test(){
 	int result = 1;
