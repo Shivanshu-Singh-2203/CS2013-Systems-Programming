@@ -1,46 +1,45 @@
 #include <stdio.h>
-//TODO: Include appropriate header file for dynamic memory allocation
 #include <stdlib.h>
 
-int main()
-{
-	int n;
-        int result = 1;
+int main(){
+        int size;
+        scanf("%d", &size);
 
-	//Get the order of the tensor from the user
-	scanf("%d", &n);
+        int*** tensor = malloc(sizeof(int**)*size);
 
-	//Do not add/modify anything about this line
-	//TODO: Complete the code
-	int*** tensor = malloc(sizeof(int**)*n);
-	for(int i = 0 ; i < n ; i ++){
-		tensor[i] = malloc(sizeof(int*)*n);
-		for(int j = 0; j < n; j ++){
-			tensor[i][j] = malloc(sizeof(int)*n);
-		}
-	}
+        for(int i = 0; i < size; i ++){
+                tensor[i] = malloc(sizeof(int*)*size);
+                for(int j = 0; j < size; j ++){
+                        tensor[i][j] = malloc(sizeof(int*)*size);
+                }
+        }
+        
+        int  result = 1;
+        for(int i = 0; i < size; i ++){
+                for(int j = 0; j < size; j ++){
+                        for(int  k = 0; k < size; k ++){
+                                scanf("%d", &tensor[i][j][k]);
+                        }
+                }
+        }
 
-	for(int k = 0; k  < n; k ++){
-		for(int i = 0 ; i < n; i ++){
-			for(int l = 0; l < n ; l ++){
-				scanf("%d", &tensor[k][i][l]);
-			}
-		}
-	}
-	for(int k = 0; k  < n; k ++){
-		for(int i = 0 ; i < n; i ++){
-			for(int l = 0; l < n ; l ++){
-				result = ((result%101010)*(tensor[k][i][l]%101010))%101010;
-			}
-		}
-	}
+        for(int i = 0; i < size; i ++){
+                for(int j = 0; j < size; j ++){
+                        for(int  k = 0; k < size; k ++){
+                                result = ((result % 101010)*(tensor[i][j][k] % 101010)) % 101010;
+                        }
+                }
+        }
 
-        printf("%d\n", result);
 
-	//TODO: DO NOT FORGET TO FREE ANY MEMORY ALLOCATED USING malloc() using
-	// free() 
-	//
-	//Do not add/modify anything below this line
-	return 0;
+        for(int i = 0; i < size; i ++){
+                for(int j = 0; j < size; j ++){
+                        free(tensor[i][j]);
+                        tensor[i][j] = NULL;
+                        }
+                free(tensor[i]);
+                tensor[i] = NULL;
+        } 
+        printf("%d", result);
+        return 0;
 }
-
