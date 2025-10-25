@@ -32,6 +32,8 @@ test-list.o : test-list.c
 testlist : test-list.o list.o
 	gcc test-list.o list.o -o t
 
+test-bigint : list.o test-bigint.o bigint.o
+	gcc test-bigint.o bigint.o list.o -o test-bigint
 4.o : 4.c
 	gcc -Werror -g -c 4.c -o 4.o
 
@@ -49,7 +51,7 @@ run: build
 	@$(PROJ_HOME)/$(NAME)
 
 clean:
-	rm -f $(NAME) run.log leaks.log *.o test-bigint
+	rm -f $(NAME) run.log leaks.log *.o test-bigint t 
 
 tests: clean build
 	@echo 'Running local test-suite'

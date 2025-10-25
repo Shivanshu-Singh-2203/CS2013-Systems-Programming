@@ -1,4 +1,5 @@
 #include "bigint.h"
+#include "list.h"
 #define POWNINE 1000000000
 void initialize(Bigint* newPtr){
 	newPtr->numbers = malloc(sizeof(List));
@@ -30,7 +31,7 @@ Bigint* add(Bigint* first, Bigint* second){
 	}
 
 	Bigint* temp = malloc(sizeof(Bigint));
-	temp->numbers = malloc(sizeof(List));
+        initialize(temp);	
 
 	int maxSize;
 	int aCount = first->numbers->curr_count;
@@ -42,8 +43,8 @@ Bigint* add(Bigint* first, Bigint* second){
 	}
 	long carry = 0;
 	for (int j = 0; j < maxSize ; j ++){
-		long fval = j > aCount ? 0 : first->numbers->array[j];
-		long sval = j > bCount ? 0 : second->numbers->array[j];
+		long fval = j >= aCount ? 0 : first->numbers->array[j];
+		long sval = j >= bCount ? 0 : second->numbers->array[j];
 
 		long sum = carry + fval + sval;
 		append(temp->numbers, sum%POWNINE);
@@ -51,7 +52,7 @@ Bigint* add(Bigint* first, Bigint* second){
 	}
 
 	if (carry > 0){
-		append(temp->numbers, carry);
+                append(temp->numbers, carry) ;
 	}
 	return temp;
 
@@ -62,9 +63,9 @@ void print (Bigint* num_ptr){
 		return;
 	}
 
-	int count = num_ptr->numbers->curr_count ;
-	for(int  i = count - 1; i >= 0; i --){
-		i == count - 1 ? printf("%d ", num_ptr->numbers->array[i]) : printf("%09d ", num_ptr->numbers->array[i]);
+	int count = num_ptr->numbers->curr_count - 1;
+	for(int  i = count ; i >= 0; i --){
+		i == count  ? printf("%d ", num_ptr->numbers->array[i]) : printf("%09d ", num_ptr->numbers->array[i]);
 	}
 printf("\n");
 	
@@ -101,15 +102,14 @@ int read(Bigint* num){
 
 	char op;
 	int number;
-	int pass  = 1;
-	while(pass){
+	while(1){
 
 		scanf("%d",&number);
-		insert(num->numbers, 0, number);
+	        insert(num->numbers,0 ,number);
 		scanf("%c", &op);
 		if(op == '\n'){
-			pass = 0;	
-		}
+	                break;
+                }
 	}
 	return 0;
 }

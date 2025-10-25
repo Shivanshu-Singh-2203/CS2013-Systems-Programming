@@ -72,9 +72,8 @@ int testRead(){
 int testInitialize(){
 	Bigint a;
 	initialize(&a);
-	int pass = 0;
 	if(a.numbers == NULL || a.numbers->array == NULL){
-		pass =1;
+	        return 1;
 	}
 	append(a.numbers, 200);
 	if (a.numbers == NULL || a.numbers->array[0] != 200){
