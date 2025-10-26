@@ -40,6 +40,7 @@ int main(){
                 free(tensor[i]);
                 tensor[i] = NULL;
         } 
+        free(tensor);
         printf("%d", result);
         return 0;
 }
