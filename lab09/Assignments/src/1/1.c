@@ -192,8 +192,8 @@ int delete(Node** ref_to_head, int num){
 	}
 	
 	if(temp == *ref_to_head){
-		temp = temp->next;
-		*ref_to_head = temp;
+		*ref_to_head = temp->next;
+                free(temp);
 		return 1;
 	}
 	Node* prev = NULL;
@@ -211,7 +211,7 @@ int delete(Node** ref_to_head, int num){
 	Node* g;
 	g = current->next;
 	prev->next = g;
-
+        free(current);
 	return 1;
 }
 
@@ -287,8 +287,9 @@ void freeNode(Node* head){
 	if(head == NULL){
 		return;
 	}
-	free(head);
-	return freeNode(head->next);
+	freeNode(head->next);
+        free(head);
+
 }
 
 int main()
@@ -356,7 +357,7 @@ int main()
         // TODO: Write appropriate code to free up memory allocated for
         // creating linked list
 
-
+        freeNode(head);
 	//Do not add/modify anything below this line
 	return 0;
 }
