@@ -1,5 +1,8 @@
+#include <stdio.h>
 
-
+int main()
+{
+int x = 8, y = 19;
 if ( (x > 10) && (y >= x) ) {
     printf("y and x are both larger than 10\n");
     x = 13;
@@ -10,4 +13,5 @@ if ( (x > 10) && (y >= x) ) {
     printf("I have no idea what the relationship between x and y is\n");
 }
 
-
+        return 0;
+}
