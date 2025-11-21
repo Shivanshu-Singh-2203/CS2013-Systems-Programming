@@ -1,111 +1,95 @@
 #include "bigint.h"
-#include "list.h"
+
 #define POWNINE 1000000000
-void initialize(Bigint* newPtr){
-	newPtr->numbers = malloc(sizeof(List));
-	newPtr->sign = 0;
+
+void freeBigint(Bigint *ptr){
+        freeList(ptr->numbers);
+        free(ptr);
 }
 
-void free_bigint(Bigint* bi_ptr){
-	if(bi_ptr == NULL){
-		return;
-	}
+void initialize(Bigint *ptr){
+        List* newList = malloc(sizeof(List));
+        newList->array = NULL;
+        newList->curr_count = 0;
+        newList->max_count = 0;
+        ptr->numbers = newList;
+        ptr->sign = 0;
+}
 
-	if(bi_ptr->numbers != NULL)
-	{
-		if(bi_ptr->numbers->array != NULL){
-			free(bi_ptr->numbers->array);
-		}
-		free(bi_ptr->numbers);		
-	}
-	free(bi_ptr);
+int equal(Bigint* first, Bigint* second){
+        if(first->sign != second->sign){
+                return 1;
+        }
+
+        List* fList = first->numbers;
+        List* sList = second->numbers;
+        if(fList->curr_count != sList->curr_count){
+                return 1;
+        }
+
+        int total = fList->curr_count;
+        for(int i = 0; i < total;i ++){
+                if(fList->array[i] != sList->array[i]){
+                        return 1;
+                }
+        }
+        return 0;
 }
 
 Bigint* add(Bigint* first, Bigint* second){
-	if(second == NULL){
-		return first;
-	}
+        if(first == NULL){
+                return second;
+        }
 
-	if(first == NULL){
-		return second;
-	}
+        if(second == NULL){
+                return first;
+        }
 
-	Bigint* temp = malloc(sizeof(Bigint));
-        initialize(temp);	
+        Bigint* res = malloc(sizeof(Bigint));
+        initialize(res);
+        
+        long carry = 0;
+        List* a = first->numbers;
+        List* b = second->numbers;
+        int maxcurr = a->curr_count > b->curr_count ? a->curr_count : b->curr_count;
 
-	int maxSize;
-	int aCount = first->numbers->curr_count;
-	int bCount = second->numbers->curr_count;
-	if(aCount < bCount){
-		maxSize = bCount;
-	} else {
-		maxSize = aCount;
-	}
-	long carry = 0;
-	for (int j = 0; j < maxSize ; j ++){
-		long fval = j >= aCount ? 0 : first->numbers->array[j];
-		long sval = j >= bCount ? 0 : second->numbers->array[j];
-
-		long sum = carry + fval + sval;
-		append(temp->numbers, sum%POWNINE);
-		carry = sum/POWNINE;
-	}
-
-	if (carry > 0){
-                append(temp->numbers, carry) ;
-	}
-	return temp;
-
+        for(int i = 0; i < maxcurr; i ++){
+                long aval = i >= a->curr_count ? 0 : a->array[i];
+                long bval = i >= b->curr_count ? 0 : b->array[i];
+                long sum = aval + bval + carry;
+                append(res->numbers, sum % POWNINE);
+                carry = sum/POWNINE;
+        }
+        
+        if(carry > 0){
+                append(res->numbers, carry);
+        }
+        return res;
 }
 
-void print (Bigint* num_ptr){
-	if(num_ptr == NULL || num_ptr->numbers == NULL){
-		return;
-	}
+void print(Bigint* ptr){
+        int* arr = ptr->numbers->array;
+        int curr = ptr->numbers->curr_count;
 
-	int count = num_ptr->numbers->curr_count - 1;
-	for(int  i = count ; i >= 0; i --){
-		i == count  ? printf("%d ", num_ptr->numbers->array[i]) : printf("%09d ", num_ptr->numbers->array[i]);
-	}
-printf("\n");
-	
-}
-
-int equal (Bigint* a, Bigint* b){
-	if(a->sign != b ->sign){
-		return 1;
-	}
-
-	if(a->numbers-> curr_count != b->numbers->curr_count){
-		return 1;
-	}
-
-	int count = a->numbers->curr_count ;
-	for(int i = 0 ; i < count ; i ++ ){
-		if(a->numbers->array[i] != b->numbers->array[i])
-		{
-			return 1;
-		}
-	}
-	return 0;
-
+        for(int i = curr - 1; i >= 0; i -- ){
+                if (i == curr-1){
+                        printf("%d", arr[i]);}
+                else {
+                        printf("%09d", arr[i]);
+                }
+        }
+        printf("\n");
 }
 
 int read(Bigint* num){
-	if(num == NULL){
-		Bigint *nnum = realloc(num, sizeof(Bigint));
-		if(nnum == NULL) {
-			return 1;
-		}
-		num = nnum;
-	}
+	initialize(num);
 
-	char op;
+        char op;
 	int number;
 	while(1){
 
 		scanf("%d",&number);
-	        insert(num->numbers,0 ,number);
+	        insert(num->numbers, 0, number); 
 		scanf("%c", &op);
 		if(op == '\n'){
 	                break;
