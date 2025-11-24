@@ -1,74 +1,90 @@
 #include <stdio.h>
-#include <stdlib.h>
-// TODO Include appopriate headers for dynamic memory allocation
-struct RBG {
-	int r;
-	int b;
-	int g;
+#include <string.h>
+
+struct pixel {
+        int r;
+        int g;
+        int b;
 };
 
-typedef struct RBG Pixel;
+typedef struct pixel Pixel;
 
-void blackAndWhite(Pixel* temp){
-	int sum = temp->r + temp->b + temp->g;
-	if(sum/3 > 128){
-		temp->r = 128;
-		temp->b = 128;
-		temp->g = 128;
-	}
-
-	else {
-		temp->r = 0; 
-		temp->b = 0;
-		temp->g = 0;
-	}
-	return;
-}
-int main(int argc, char** argv){
-	if(argc != 3){
-		printf("Invalid command line entries.\n");
-		return 1;
-	}
-	
-	FILE* file;
-	file = fopen(argv[1], "r");
-	if(file == NULL){
-		printf("Unable to open ppm file.\n");
-		return 1;
-	}
-
-	FILE * winto;
-	winto = fopen(argv[2], "w");
-	if(winto == NULL){
-		printf("Unable to open out file.\n");
-		return 1;
-	}
-
-	char method[32];
-	fgets(method, 30, file);
-//	printf("%s", method);
-	fprintf(winto, "%s", method);
-	int columns, rows;
-	fscanf(file, "%d %d", &columns, &rows);
-	fprintf(winto, "%d %d\n", columns ,rows);
-	
-	int max;
-	fscanf(file, "%d", &max);
-	fprintf(winto, "%d\n", max);
-
-	for(int i = 0; i < rows; i ++){
-		for(int j = 0; j < columns; j ++){
-				Pixel temp;
-				fscanf(file, "%d", &temp.r );
-				fscanf(file, "%d", &temp.b);
-				fscanf(file, "%d", &temp.g);
-				blackAndWhite(&temp);
-				fprintf(winto, "%d %d %d\n", temp.r, temp.b, temp.g);
-		}
-	}
-	free(winto);
-	free(file);
-	return 0;
+int verifyPixel(Pixel a){
+        if (a.r > 255 || a.b > 255 || a.g > 255){
+                return 1;
+        }
+        else if (a.r < 0 || a.b <0 || a.g < 0){
+                return 1;
+        }
+        return 0;
 }
 
+Pixel getbw(Pixel r){
+        int temp = r.r + r.b + r.g;
+        int val = temp/3 > 128 ? 128 : 0;
+        Pixel res;
+        res.b = val;
+        res.g = val;
+        res.r = val;
+        return res;
+}
 
+int main(int argc, char *argv[])
+{
+        if(argc < 3){
+                printf("Not enough arguments given.\n");
+                return 1;
+        }
+
+        FILE* file;
+        file = fopen(argv[1], "r");
+        if(file == NULL){
+                printf("Unable to open the file.\n");
+                return 1;
+        }
+
+        char format[3];
+        fscanf(file, "%s", format);
+        if(strcmp(format, "P3") !=0){
+                printf("The file format of file %s is not valid.\n", argv[1]);
+                return 1;
+        }       
+
+        int rows, cols;
+        fscanf(file, "%d %d", &rows, &cols);
+
+        int colors;
+        fscanf(file, "%d", &colors);
+
+        if(colors != 255)
+        {
+                printf("Invalid color count provided.\n");
+                return 1;
+        }
+
+        FILE* out;
+        out = fopen(argv[2], "w");
+
+        fprintf(out, "%s\n", format);
+        fprintf(out, "%d %d\n", rows, cols);
+        fprintf(out, "%d\n", colors);
+
+        for (int i = 0; i < rows; i ++) {
+                for(int j = 0; j < cols; j ++){
+                        Pixel temp;
+                        if (fscanf(file, "%d %d %d", &temp.r, &temp.g, &temp.b) != 3)
+                        {
+                                return 1;
+                        };
+                        if(verifyPixel(temp)){
+                                printf("Invalid pixel data\n");
+                                return 1;
+                        }
+
+                        Pixel res = getbw(temp);
+                        fprintf(out, "%d %d %d ", res.r , res.g, res.b);
+                }
+        } 
+        return 0;
+}
+                  

@@ -26,10 +26,7 @@ int main()
         unsigned int input;
 
 	scanf("%d", &input);
-	// Do not modify anything above this line
-	// TODO: Complete the code
 	factoral(input, fact);
-	//Do not add/modify anything below this line
 	return 0;
 }
 

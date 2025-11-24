@@ -26,17 +26,5 @@ run: build
 	@$(PROJ_HOME)/$(NAME)
 
 clean:
-	rm -f $(NAME) readppm run.log leaks.log *.o *.ppm
+	rm -f $(NAME) readppm *.o *.ppm betterbwprint bwprint
 
-tests: clean build
-	@echo 'Running local test-suite'
-	@$(TESTS_DIR)/verifier --proj-dir=$(PROJ_HOME) --proj-name=$(NAME) --tests-dir=$(TESTS_DIR)
-	@cat run.log
-	@echo 'Finished running all test cases'
-
-ltests: clean build
-	@echo 'Running valgrind for test-suite'
-	@echo 'Hang in tight ... while we test'
-	@$(TESTS_DIR)/leakcheck --proj-dir=$(PROJ_HOME) --proj-name=$(NAME) --tests-dir=$(TESTS_DIR)
-	@cat leaks.log
-	@echo 'Finished running valgrind on test cases'

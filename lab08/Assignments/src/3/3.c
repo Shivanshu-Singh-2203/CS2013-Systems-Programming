@@ -9,11 +9,8 @@ int main()
 {
 	int matrix[ROWS][COLS];
 
-	//Get an integer from the user
 	scanf("%d %d %d %d", &matrix[0][0], &matrix[0][1], &matrix[1][0], &matrix[1][1]);
 
-	//Do not add/modify anything above this line
-	//TODO: Complete the code
 	float determinant = matrix[0][0]*matrix[1][1] - matrix[1][0]*matrix[0][1];
 
 
@@ -34,7 +31,6 @@ int main()
 	printf("%.4f %.4f\n",inverse[1][0], inverse[1][1]);
 	
 	}	
-	//Do not add/modify anything below this line
 	return 0;
 }
 
