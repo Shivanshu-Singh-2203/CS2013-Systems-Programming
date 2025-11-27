@@ -12,11 +12,10 @@ struct queue{
 typedef struct queue Queue;
 
 void enqueue(Queue* q, const int val);
-int front(Queue* q);
-void dequeue(Queue* q);
+int front(Queue* q, int* dataptr);
+int dequeue(Queue* q, int* dataptr);
 int size(Queue* q);
-void freeQueue(Queue* q);
 void display(Queue* q);
 void reverseQueue(Queue* q);
-void search(Queue* q)
+void search(Queue* q);
 #endif

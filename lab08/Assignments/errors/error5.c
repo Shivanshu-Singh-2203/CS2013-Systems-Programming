@@ -6,10 +6,11 @@
 int function_returning_false() {return FALSE;}
 
 int main() {
-  if (function_returning_false()) {
+        int val = function_returning_false();
+        if (val) {
     printf("function returned true\n");
   }
-else {
+        else {
     printf("function returned false\n");
 }
 return 0;

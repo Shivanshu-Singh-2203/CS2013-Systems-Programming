@@ -4,11 +4,8 @@ int main()
 {
 	int value, current;
 
-	//Read an integer from the user
 	scanf("%d", &value);
 
-	//Do not add/modify anything about this line
-	//TODO: Complete the cod
 	int arr[value + 1];
 	
 	for(int i = 0; i < value; i ++)

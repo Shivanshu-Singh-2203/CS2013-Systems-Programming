@@ -22,6 +22,6 @@ int main() {
   f(1);
   printf("a = {%d,%d,%d}\n", a[0], a[1], a[2]);
   g(2);
-  printf("a = {%d,%d,%d}\n", a[0], a[1], a[2]);
+  printf("b = {%d,%d,%d}\n", b[0], b[1], b[2]);
 }
 

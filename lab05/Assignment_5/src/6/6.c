@@ -4,11 +4,8 @@ int main()
 {
 	int a = 0;
 
-	//Get an integer from the user
 	scanf("%d", &a);
 
-	//Do not add/modify anything about this line
-	//TODO: Complete the code
 	int current = 1;
 	if(a == 0)
 	{                        printf("Not power of 3\n");
@@ -26,7 +23,6 @@ int main()
 	{
 		printf("Power of 3\n");
 	}
-	//Do not add/modify anything below this line
-	return 0;
+        return 0;
 }
 
