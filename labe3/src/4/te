@@ -1,0 +1,915 @@
+rm -f 4 run.log leaks.log
+gcc -o 4 4.c -Wall -Werror
+Running local test-suite
+===================
+test5: PASSED
+Given input
+11
+stressed dresser
+fired fider
+light dark
+ate eat
+cured curd
+heart stone
+name mean
+stare taste
+summer winter
+admirer married
+evil vile
+Got output: 
+No
+Yes
+No
+Yes
+No
+No
+Yes
+No
+No
+Yes
+Yes
+===================
+
+===================
+test9: PASSED
+Given input
+7
+cried riced
+hearts hatters
+news sewn
+wait tawi
+speak peaks
+seat taste
+cider cried
+Got output: 
+Yes
+No
+Yes
+Yes
+Yes
+No
+Yes
+===================
+
+===================
+test7: PASSED
+Given input
+10
+emote motee
+bore robe
+grammar margar
+mail lima
+chores roches
+ripe peri
+fowl fish
+rose sore
+opt pot
+arise raise
+Got output: 
+Yes
+Yes
+No
+Yes
+Yes
+Yes
+No
+Yes
+Yes
+Yes
+===================
+
+===================
+test0: PASSED
+Given input
+2
+smartest mattress
+test sets
+Got output: 
+Yes
+No
+===================
+
+===================
+test2: PASSED
+Given input
+12
+bored robed
+slam lams
+great grate
+tomb mbot
+sun moon
+bear wolf
+yard dray
+save vase
+debate betoad
+sane sean
+pear reap
+cider cried
+Got output: 
+Yes
+Yes
+Yes
+Yes
+No
+No
+Yes
+Yes
+No
+Yes
+Yes
+Yes
+===================
+
+===================
+test8: PASSED
+Given input
+11
+clear lacer
+hats sath
+mind dimin
+read dare
+baits baits
+ode doe
+ward draw
+been bene
+modes mosed
+gains sagin
+listen noise
+Got output: 
+Yes
+Yes
+No
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+No
+===================
+
+===================
+test6: PASSED
+Given input
+13
+meal male
+stone pebble
+mister timres
+ripen repin
+diaper repaid
+bread butter
+wean eawn
+save vase
+brag nice
+seam same
+elbow below
+rescue secure
+angel devil
+Got output: 
+Yes
+No
+Yes
+Yes
+Yes
+No
+Yes
+Yes
+No
+Yes
+Yes
+Yes
+No
+===================
+
+===================
+test1: PASSED
+Given input
+13
+fried baked
+paint napit
+flame cold
+open pone
+glean angel
+hate heat
+liar rial
+sail boat
+tear rate
+wart traw
+mark karma
+shine shein
+rats tars
+Got output: 
+No
+Yes
+No
+Yes
+Yes
+Yes
+Yes
+No
+Yes
+Yes
+No
+Yes
+Yes
+===================
+
+===================
+test10: PASSED
+Given input
+3
+martest mattres
+test setz
+mass same
+Got output: 
+Yes
+No
+No
+===================
+
+===================
+test4: PASSED
+Given input
+13
+note tone
+tread trade
+gore ogre
+brag grab
+night thing
+yearn nayer
+hero hore
+east seat
+item time
+arc car
+fried fider
+glisten listen
+stare tears
+Got output: 
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+No
+Yes
+===================
+
+===================
+test3: PASSED
+Given input
+14
+vile live
+triangle integral
+earn near
+calm storm
+inch chin
+night day
+scent cents
+angel glean
+fried fider
+tear rate
+act cat
+cider wine
+dormitory library
+pots stop
+Got output: 
+Yes
+Yes
+Yes
+No
+Yes
+No
+Yes
+Yes
+Yes
+Yes
+Yes
+No
+No
+Yes
+===================
+
+
++++++++++++++++++++
+TESTS_PASSED: 11
+TESTS_FAILED: 0
++++++++++++++++++++
+
+Finished running all test cases
+rm -f 4 run.log leaks.log
+gcc -o 4 4.c -Wall -Werror
+Running local test-suite
+===================
+test5: PASSED
+Given input
+11
+stressed dresser
+fired fider
+light dark
+ate eat
+cured curd
+heart stone
+name mean
+stare taste
+summer winter
+admirer married
+evil vile
+Got output: 
+No
+Yes
+No
+Yes
+No
+No
+Yes
+No
+No
+Yes
+Yes
+===================
+
+===================
+test9: PASSED
+Given input
+7
+cried riced
+hearts hatters
+news sewn
+wait tawi
+speak peaks
+seat taste
+cider cried
+Got output: 
+Yes
+No
+Yes
+Yes
+Yes
+No
+Yes
+===================
+
+===================
+test7: PASSED
+Given input
+10
+emote motee
+bore robe
+grammar margar
+mail lima
+chores roches
+ripe peri
+fowl fish
+rose sore
+opt pot
+arise raise
+Got output: 
+Yes
+Yes
+No
+Yes
+Yes
+Yes
+No
+Yes
+Yes
+Yes
+===================
+
+===================
+test0: PASSED
+Given input
+2
+smartest mattress
+test sets
+Got output: 
+Yes
+No
+===================
+
+===================
+test2: PASSED
+Given input
+12
+bored robed
+slam lams
+great grate
+tomb mbot
+sun moon
+bear wolf
+yard dray
+save vase
+debate betoad
+sane sean
+pear reap
+cider cried
+Got output: 
+Yes
+Yes
+Yes
+Yes
+No
+No
+Yes
+Yes
+No
+Yes
+Yes
+Yes
+===================
+
+===================
+test8: PASSED
+Given input
+11
+clear lacer
+hats sath
+mind dimin
+read dare
+baits baits
+ode doe
+ward draw
+been bene
+modes mosed
+gains sagin
+listen noise
+Got output: 
+Yes
+Yes
+No
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+No
+===================
+
+===================
+test6: PASSED
+Given input
+13
+meal male
+stone pebble
+mister timres
+ripen repin
+diaper repaid
+bread butter
+wean eawn
+save vase
+brag nice
+seam same
+elbow below
+rescue secure
+angel devil
+Got output: 
+Yes
+No
+Yes
+Yes
+Yes
+No
+Yes
+Yes
+No
+Yes
+Yes
+Yes
+No
+===================
+
+===================
+test1: PASSED
+Given input
+13
+fried baked
+paint napit
+flame cold
+open pone
+glean angel
+hate heat
+liar rial
+sail boat
+tear rate
+wart traw
+mark karma
+shine shein
+rats tars
+Got output: 
+No
+Yes
+No
+Yes
+Yes
+Yes
+Yes
+No
+Yes
+Yes
+No
+Yes
+Yes
+===================
+
+===================
+test10: PASSED
+Given input
+3
+martest mattres
+test setz
+mass same
+Got output: 
+Yes
+No
+No
+===================
+
+===================
+test4: PASSED
+Given input
+13
+note tone
+tread trade
+gore ogre
+brag grab
+night thing
+yearn nayer
+hero hore
+east seat
+item time
+arc car
+fried fider
+glisten listen
+stare tears
+Got output: 
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+No
+Yes
+===================
+
+===================
+test3: PASSED
+Given input
+14
+vile live
+triangle integral
+earn near
+calm storm
+inch chin
+night day
+scent cents
+angel glean
+fried fider
+tear rate
+act cat
+cider wine
+dormitory library
+pots stop
+Got output: 
+Yes
+Yes
+Yes
+No
+Yes
+No
+Yes
+Yes
+Yes
+Yes
+Yes
+No
+No
+Yes
+===================
+
+
++++++++++++++++++++
+TESTS_PASSED: 11
+TESTS_FAILED: 0
++++++++++++++++++++
+
+Finished running all test cases
+rm -f 4 run.log leaks.log
+gcc -o 4 4.c -Wall -Werror
+Running local test-suite
+===================
+test5: PASSED
+Given input
+11
+stressed dresser
+fired fider
+light dark
+ate eat
+cured curd
+heart stone
+name mean
+stare taste
+summer winter
+admirer married
+evil vile
+Got output: 
+No
+Yes
+No
+Yes
+No
+No
+Yes
+No
+No
+Yes
+Yes
+===================
+
+===================
+test9: PASSED
+Given input
+7
+cried riced
+hearts hatters
+news sewn
+wait tawi
+speak peaks
+seat taste
+cider cried
+Got output: 
+Yes
+No
+Yes
+Yes
+Yes
+No
+Yes
+===================
+
+===================
+test7: PASSED
+Given input
+10
+emote motee
+bore robe
+grammar margar
+mail lima
+chores roches
+ripe peri
+fowl fish
+rose sore
+opt pot
+arise raise
+Got output: 
+Yes
+Yes
+No
+Yes
+Yes
+Yes
+No
+Yes
+Yes
+Yes
+===================
+
+===================
+test0: PASSED
+Given input
+2
+smartest mattress
+test sets
+Got output: 
+Yes
+No
+===================
+
+===================
+test2: PASSED
+Given input
+12
+bored robed
+slam lams
+great grate
+tomb mbot
+sun moon
+bear wolf
+yard dray
+save vase
+debate betoad
+sane sean
+pear reap
+cider cried
+Got output: 
+Yes
+Yes
+Yes
+Yes
+No
+No
+Yes
+Yes
+No
+Yes
+Yes
+Yes
+===================
+
+===================
+test8: PASSED
+Given input
+11
+clear lacer
+hats sath
+mind dimin
+read dare
+baits baits
+ode doe
+ward draw
+been bene
+modes mosed
+gains sagin
+listen noise
+Got output: 
+Yes
+Yes
+No
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+No
+===================
+
+===================
+test6: PASSED
+Given input
+13
+meal male
+stone pebble
+mister timres
+ripen repin
+diaper repaid
+bread butter
+wean eawn
+save vase
+brag nice
+seam same
+elbow below
+rescue secure
+angel devil
+Got output: 
+Yes
+No
+Yes
+Yes
+Yes
+No
+Yes
+Yes
+No
+Yes
+Yes
+Yes
+No
+===================
+
+===================
+test1: PASSED
+Given input
+13
+fried baked
+paint napit
+flame cold
+open pone
+glean angel
+hate heat
+liar rial
+sail boat
+tear rate
+wart traw
+mark karma
+shine shein
+rats tars
+Got output: 
+No
+Yes
+No
+Yes
+Yes
+Yes
+Yes
+No
+Yes
+Yes
+No
+Yes
+Yes
+===================
+
+===================
+test10: PASSED
+Given input
+3
+martest mattres
+test setz
+mass same
+Got output: 
+Yes
+No
+No
+===================
+
+===================
+test4: PASSED
+Given input
+13
+note tone
+tread trade
+gore ogre
+brag grab
+night thing
+yearn nayer
+hero hore
+east seat
+item time
+arc car
+fried fider
+glisten listen
+stare tears
+Got output: 
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+No
+Yes
+===================
+
+===================
+test3: PASSED
+Given input
+14
+vile live
+triangle integral
+earn near
+calm storm
+inch chin
+night day
+scent cents
+angel glean
+fried fider
+tear rate
+act cat
+cider wine
+dormitory library
+pots stop
+Got output: 
+Yes
+Yes
+Yes
+No
+Yes
+No
+Yes
+Yes
+Yes
+Yes
+Yes
+No
+No
+Yes
+===================
+
+
++++++++++++++++++++
+TESTS_PASSED: 11
+TESTS_FAILED: 0
++++++++++++++++++++
+
+Finished running all test cases
